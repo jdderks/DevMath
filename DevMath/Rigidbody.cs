@@ -13,11 +13,17 @@ namespace DevMath
             get; private set;
         }
 
-        public float mass = 1.0f;
-        public float force = 150.0f;
-        public float dragCoefficient = .47f;
+        public float Acceleration 
+        { 
+            get; private set; 
+        }
 
-        public void AddForce(Vector2 forceDirection, float deltaTime)
+        public float mass = 1.0f;
+
+        public float frictionCoefficient;
+        public float normalForce;
+
+        public void UpdateVelocityWithForce(Vector2 forceDirection, float forceNewton, float deltaTime)
         {
             throw new NotImplementedException();
         }
