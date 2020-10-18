@@ -25,7 +25,8 @@ namespace DevMath
 
         public void UpdateVelocityWithForce(Vector2 forceDirection, float forceNewton, float deltaTime)
         {
-            throw new NotImplementedException();
+            Velocity -= -forceDirection * forceNewton * deltaTime * mass;
+            Velocity *= (1 - deltaTime * frictionCoefficient);
         }
     }
 }

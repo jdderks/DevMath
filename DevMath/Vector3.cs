@@ -14,12 +14,12 @@ namespace DevMath
 
         public float Magnitude
         {
-            get { throw new NotImplementedException(); }
+            get { return (float)Math.Sqrt(x * x + y * y + z * z); }
         }
 
         public Vector3 Normalized
         {
-            get { throw new NotImplementedException(); }
+            get { return new Vector3(x, y, z) / Magnitude; }
         }
 
         public Vector3(float x, float y, float z)
@@ -31,47 +31,47 @@ namespace DevMath
 
         public static implicit operator Vector3(Vector2 v)
         {
-            throw new NotImplementedException();
+            return new Vector3(v.x, v.y, 0);
         }
 
         public static float Dot(Vector3 lhs, Vector3 rhs)
         {
-            throw new NotImplementedException();
+            return (lhs.x * rhs.x) + (lhs.y * rhs.y) + (lhs.z * lhs.z);
         }
 
         public static Vector3 Cross(Vector3 lhs, Vector3 rhs)
         {
-            throw new NotImplementedException();
+            return new Vector3(lhs.y * rhs.z - rhs.y * lhs.z, (lhs.x * rhs.z - rhs.x * lhs.z) * -1, lhs.x * rhs.y - rhs.x * lhs.y);
         }
 
         public static Vector3 Lerp(Vector3 a, Vector3 b, float t)
         {
-            throw new NotImplementedException();
+            return a + (b - a) * t;
         }
 
         public static Vector3 operator +(Vector3 lhs, Vector3 rhs)
         {
-            throw new NotImplementedException();
+            return new Vector3(lhs.x + rhs.x, lhs.y + rhs.y,lhs.z + rhs.z);
         }
 
         public static Vector3 operator -(Vector3 lhs, Vector3 rhs)
         {
-            throw new NotImplementedException();
+            return new Vector3(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z);
         }
 
         public static Vector3 operator -(Vector3 v)
         {
-            throw new NotImplementedException();
+            return new Vector3(v.x * -1, v.y * -1, v.z * -1);
         }
 
         public static Vector3 operator *(Vector3 lhs, float scalar)
         {
-            throw new NotImplementedException();
+            return new Vector3(lhs.x * scalar, lhs.y * scalar, lhs.z * scalar);
         }
 
         public static Vector3 operator /(Vector3 lhs, float scalar)
         {
-            throw new NotImplementedException();
+            return new Vector3(lhs.x / scalar, lhs.y / scalar, lhs.z / scalar);
         }
     }
 }
